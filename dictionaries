@@ -1,0 +1,120 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[16]:
+
+
+weather={}
+with open("C:\\Users\\manoj\\OneDrive\\Documents\\DS practice\\data-structures-algorithms-python-master\\data_structures\\4_HashTable_2_Collisions\\Solution\\nyc_weather.csv","r") as df:
+        df.readline()
+        for line in df:
+              coins = line.split(",")
+              date = coins[0]
+              temp = float(coins[1])
+              weather[date] = temp  
+
+
+# In[59]:
+
+
+print (weather)
+
+
+# In[60]:
+
+
+x = 0
+count = 0
+
+for i, value in enumerate(weather.values()):
+    x += value
+    count += 1
+    if count == 7:
+        break
+
+if count == 7:
+    print(x / 7)
+else:
+    print("Not enough values to calculate the average.")
+
+
+# In[61]:
+
+
+l = 0 
+counter = 0
+
+for value in weather.values():
+    if (l < value):
+        l= value
+        counter =+1
+    else:
+        l=l
+        counter=+1
+    if counter == 10:
+        break
+        
+print(l)
+
+
+
+k=max(weather.values())
+print(k)
+
+
+
+
+
+
+# In[65]:
+
+
+weather["Jan 9"]
+
+
+# In[67]:
+
+
+weather["Jan 4"]
+
+
+# In[108]:
+
+
+poem={}
+with open("C:\\Users\manoj\\OneDrive\Documents\\DS practice\\data-structures-algorithms-python-master\\data_structures\\4_HashTable_2_Collisions\\Solution\\poem.txt","r") as pm:
+    
+    for x in pm:
+        words = x.split(" ")
+        
+        for word in words:
+            word = word.replace("\n","")
+            if word in poem:
+                poem[word]+=1
+            else:
+                poem[word]=1
+            
+    
+    
+    
+    
+    
+
+
+# In[109]:
+
+
+poem
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
