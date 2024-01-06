@@ -20,8 +20,10 @@ class Stack:
     
     def __iter__(self):
         return iter(self.container)
+    def __iter__(self):
+        return iter(self.container)
         
-    def reverse(self):
+def reverse(self):
         new = Stack()
         
         for c in self:
@@ -35,7 +37,5 @@ class Stack:
         return revstr
     
     
-s = Stack()
-s.push("rabada")
-reversed_str = s.reverse()
-print(reversed_str)        
+
+reverse("LION")
