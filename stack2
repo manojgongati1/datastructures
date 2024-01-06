@@ -1,0 +1,49 @@
+from collections import deque
+
+class Stack:
+    def __init__(self):
+        self.container = deque()
+
+    def push(self, val):
+        self.container.append(val)
+
+    def pop(self):
+        return self.container.pop()
+    
+    def size(self):
+        self.container.len()
+        
+    def __iter__(self):
+        return iter(self.container)
+
+    def peek(self):
+        return self.container[-1]
+
+    def is_empty(self):
+        return len(self.container) == 0
+
+    def size(self):
+        return len(self.container)
+    
+
+    
+def ismatch(c1,c2):
+    ismatch= {')': '(',
+        ']': '[',
+        '}': '{'}
+    
+    return ismatch[c1]==c2
+
+def check(self):
+    new = Stack()
+    for c in self:
+        if c == '(' or c =='{' or c == '[':
+            new.push(c)
+        if c == ')' or c == '}' or c == ']':
+            if new.size() == 0:
+                return False
+            if not ismatch(c,new.pop()):
+                return False
+    return new.size()==0
+                
+check("parant()hesis")
